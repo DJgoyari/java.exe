@@ -1,1 +1,37 @@
 
+package beginning;
+import java.util.*;
+public class OTPGenerator {
+	public static void main(String[] args) {
+		Random random = new Random ();
+		Scanner scan=new Scanner (System.in);
+		boolean corNO = true;
+		//while (corNO)
+		{System.out.print("Enter your phone number: ");
+		int phNO = scan.nextInt(); 
+		switch (phNO)
+		{ case 1234567 : 
+		int otp = random.nextInt(99999)+1; System.out.println("Your OTP is: "+otp);
+		System.out.print("Match your OTP to access the app: ");
+		int match = scan.nextInt();
+		boolean matchno= true;
+		if (match == otp ) {
+			matchno = true; System.out.println("You have gained access to the app");
+		break;}
+		default : System.out.println("Wrong credential");break;
+	
+		
+		}}}}
+			
+			
+		
+		
+		
+		
+			
+	
+		
+
+	 
+
+
