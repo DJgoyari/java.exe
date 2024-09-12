@@ -1,0 +1,85 @@
+package beginning;
+import java.util.*;
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		Mom mom = new Mom ("Mom");
+		Son son = new Son ("Son");
+	    Veggies veg = new Veggies ();
+		
+		
+		mom.order();
+		son.goes();
+	    veg.grabs();
+	}
+}
+//created new class named Mom.java
+  package beginning;
+import java.util.*;
+public class Mom {
+	String name = "";
+	Mom (String name){
+		this.name = name;
+	}
+	
+	void order () {
+		System.out.println( "*son go to the market and buy some veggies*");
+	}
+}
+// again new class named Son.java
+    package beginning;
+import java.util.Scanner;
+public class Son {
+	 
+	String name1 ;
+	
+	
+	Son (String name1){
+		this.name1 = name1;}
+	
+
+
+  void goes () {
+		Scanner scan = new Scanner (System.in);
+	    	System.out.print("do i want to go?? (y/n): ");
+	    	char choice = scan.next().charAt(0);
+	    	switch (choice) {
+	    	case 'y' : System.out.println( " okay mom");
+	    	break;
+	    	case 'n' : System.out.println("Dont disobey your mom lil bro");
+	    	break; 
+	    	default : System.out.println("invalid choice,you will have to go anyway!");
+	    	}
+	    	
+	    		}
+	    	}
+	    // again new class Veggies
+      package beginning;
+import java.util.Scanner;
+public class Veggies {
+	
+    
+  void grabs() {
+	  Scanner scan = new Scanner (System.in);
+	 System.out.print("Choose vegetables: ");
+	  String a = scan.next();
+	System.out.println ("*son puts "+a+" in the cart*" );
+	System.out.println("*Son goes home*");
+  }
+	
+}
+
+
+		
+		
+		
+		
+	
+	
+	
+
+
+
+  
