@@ -1,0 +1,57 @@
+import java.util.*;
+public class simpleCalc {
+
+	public static void main(String[] args) {
+		
+		Scanner calc = new Scanner (System.in);
+		      
+		      boolean tobecont =true;
+		    
+		      while (tobecont) {
+		    	  
+		      
+		System.out.print("Enter your first number: ");
+		int a = calc.nextInt();
+		System.out.println("choose: +,-,*,/" );
+		char operator = calc.next().charAt(0);
+			
+		if (operator != '+' &&  operator !='-' && operator !='*' && operator !='/') { System.out.println("invalid choice");
+			calc.close();
+			return ;}
+		
+	
+		
+		
+		System.out.print("Enter you second number: ");
+		int b = calc.nextInt();		
+		
+		switch (operator) {
+		case '+' : int sum = a+b;
+			System.out.println(sum);
+			break;
+		case '-' : int sub = a-b;
+		System.out.println(sub);
+		break;
+		case '*' : int mult = a*b;
+		System.out.println(mult);
+		break;
+		case '/' : int div = a/b;
+		break;}
+		
+		System.out.println("do you wish to continue (y/n)"); // not necessary in my opinion 
+		                                                      //cuz i dont want my calc to run out of battery
+		char choice = calc.next().charAt(0);                 // until and unless if i want to switch it off hahaha
+		if (choice =='y' || choice == 'Y') {
+			tobecont = true;
+		}
+		
+		if (choice =='n' || choice == 'N') {
+			tobecont = false;}
+		
+		
+	
+		      }
+		  	calc.close();}
+	
+}
+
