@@ -40,7 +40,7 @@ public class simpleCalc {
 		
 		System.out.println("do you wish to continue (y/n)"); // not necessary in my opinion 
 		                                                      //cuz i dont want my calc to run out of battery
-		char choice = calc.next().charAt(0);                 // until and unless if i want to switch it off hahaha
+		char choice = calc.next().charAt(0);                 // until and unless if i want to switch it off haha
 		if (choice =='y' || choice == 'Y') {
 			tobecont = true;
 		}
