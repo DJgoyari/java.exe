@@ -1,0 +1,102 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Main  {
+	
+public static void main(String[] args) {
+	JFrame frame=new JFrame ();
+	JPanel pane = new JPanel ();
+	JButton b1 = new JButton();
+	JButton b2 = new JButton();
+	JButton b3 = new JButton();
+	JButton b4 = new JButton();
+	JTextField f1 = new JTextField();
+	JTextField f2 = new JTextField();
+	JLabel l1 = new JLabel();
+	JLabel l2 = new JLabel();
+	JLabel l3 = new JLabel();
+	int[] a = {1000};
+	
+	//label
+	
+	
+	//Text field
+   f1.setBounds(350, 80, 100, 30);
+   f2.setBounds(350, 130, 100, 30);
+	
+	
+	//buttons
+	b1.setFocusable(false);
+	b1.setText("Check Balance");
+	b1.setBounds(140, 30, 200, 30);
+	
+	b1.addActionListener(new ActionListener(){
+		public void actionPerformed(ActionEvent e) {
+		l1.setText("Your Balance: $"+ a[0]);
+		l1.setBounds(140, 250, 200, 30);
+		l1.setVisible(true);}
+	});
+	
+	b2.setFocusable(false);
+	b2.setText("Deposit");
+	b2.setBounds(140, 80, 200, 30);
+	b2.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			int depo =  Integer.parseInt(f1.getText());
+			if (depo > 0) {
+				a[0] += depo;
+			}
+			l2.setText("You have Deposited: $"+ depo);
+			l2.setBounds(140, 300, 200, 30);
+			l2.setVisible(true);
+		}
+	}
+			
+			);
+	
+	
+	b3.setFocusable(false);
+	b3.setText("Withdraw");
+	b3.setBounds(140, 130, 200, 30);
+	b3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int with = Integer.parseInt(f2.getText());
+				if (with > 0) {
+					a[0] -= with;
+				}
+				l3.setText("You have withdraw: $"+ with);
+				l3.setBounds(140, 350, 200, 30);
+				l3.setVisible(true);
+			}
+	});
+	
+	b4.setFocusable(false);
+	b4.setText("Exit");
+	b4.setBounds(140, 180, 200, 30);
+	b4.addActionListener(e -> System.exit(0));
+	// panel
+	pane.add(l1);
+	pane.add(l2);
+	pane.add(l3);
+	pane.add(f1);
+	pane.add(f2);
+	pane.add(b1);
+	pane.add(b2);
+	pane.add(b3);
+	pane.add(b4);
+	pane.setPreferredSize(new Dimension(500,500));
+	pane.setBackground(Color.GRAY);
+	pane.setLayout(null);
+	
+	frame.add(pane);
+	frame.setSize(500,500);
+	frame.setVisible(true);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+}
+
+}
+	
+		
+	
