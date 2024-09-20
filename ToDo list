@@ -1,0 +1,75 @@
+package beginning;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Main  {
+	
+public static void main(String[] args) {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton b1 = new JButton();
+	JButton b2 = new JButton();
+	
+	JTextField f1 = new JTextField();
+	
+	//list
+	DefaultListModel<String> listModel = new DefaultListModel<String> ();
+	JList<String> taskList = new JList<> (listModel);
+	
+	//textField
+	f1.setBounds(20, 400, 400, 30);
+	//button
+	b1.setText("Add task");
+	b2.setText("Remove task");
+	
+	b1.setBounds(0, 435, 230, 30);
+	b2.setBounds(250, 435, 250, 30);
+	
+	b1.setFocusable(false);b2.setFocusable(false);
+	
+	
+	//action listener
+	b1.addActionListener(e -> {
+		String list = f1.getText();
+		
+		if (!list.isEmpty()) {
+			listModel.addElement(list);
+		}
+		else {JOptionPane.showMessageDialog(b1, "Error");} f1.setText("");
+	});
+	
+	b2.addActionListener(e-> {
+		int select =taskList.getSelectedIndex();
+		if(select != -1) {
+			listModel.remove(select);
+		}else {JOptionPane.showMessageDialog(b2, "Error");};
+	});
+	
+	//ScrollPanel
+	JScrollPane scroll =new JScrollPane(taskList);
+	scroll.setBounds(0, 0, 500, 400);
+	
+	
+	//add
+	
+	panel.add(scroll);
+	panel.add(b1);
+	panel.add(b2);
+	panel.add(f1);
+	frame.add(panel);
+	//panel
+		panel.setSize(500,500);
+		panel.setLayout(null);
+	
+	//frame
+	frame.setSize(500,500);
+	frame.setResizable(false);
+	frame.setVisible(true);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
+
+}
+	
+		
+	
