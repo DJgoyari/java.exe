@@ -1,0 +1,58 @@
+import java.awt.Font;
+
+import javax.swing.*;
+public class Main {
+	public static void main(String[] args) {
+    JFrame frame = new JFrame(); JLabel l1 = new JLabel();
+    Font font = new Font("Chiller",Font.BOLD, 12);
+	JLabel l2 = new JLabel();
+    JButton b1 = new JButton("°C to °F"); JButton b2 = new JButton("°F to °C");
+	JTextField f1 = new JTextField();	JTextField f2 = new JTextField();
+	//buttons
+	b1.setBounds(100, 90, 100, 30); 
+	
+	b1.addActionListener(e -> {
+		try {
+		double cel = Double.parseDouble(f1.getText());
+		
+		if (!f1.getText().isEmpty()) {
+			 double far = (cel * 9/5) + 32;
+			 l1.setText(far+" °F"); 
+			 l1.setBounds(100, 130, 100, 30);  
+			l1.setFont(font);
+		 }} catch (NumberFormatException ew) 
+		{JOptionPane.showMessageDialog(b1, "Invalid input","error",JOptionPane.ERROR_MESSAGE);}
+	});
+	
+	
+	
+	b2.setBounds(100, 180, 100, 30);
+	b2.addActionListener(e -> {
+		try {
+		double far = Double.parseDouble(f2.getText());
+		
+		if (!f2.getText().isEmpty()) {
+			 double cel = (far - 32) * 5/9;
+			 l2.setText(cel +" °C"); 
+			 l2.setBounds(100, 220, 100, 30);
+			 l2.setFont(font);
+			
+		 }} catch (NumberFormatException ew)
+		{JOptionPane.showMessageDialog(b2, "Invalid input","error",JOptionPane.ERROR_MESSAGE);}
+	});
+	
+	b1.setFocusable(false); b2.setFocusable(false);
+	//
+	f1.setBounds(230, 90, 80, 30); f2.setBounds(230, 180, 80, 30);
+	f1.setFont(font); f1.setFont(font);
+	
+	//frame
+	frame.add(b1);frame.add(b2);frame.add(f1);frame.add(f2);frame.add(l1);frame.add(l2);
+	frame.setSize(400,400);
+	frame.setLayout(null);
+	frame.setVisible(true);
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	
+	}
+}
