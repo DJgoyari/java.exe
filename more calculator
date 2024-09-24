@@ -1,0 +1,38 @@
+package beginning;
+import java.util.Scanner;
+public class Main {
+public static void main(String[] args) {
+	
+	
+	System.out.println("Enter number: ");
+	Scanner scan = new Scanner(System.in);
+	double [] num = {scan.nextDouble()};
+	
+	while (true) {
+		System.out.println("Enter Operator(+,-,*,/): ");
+		String operators = scan.next();
+		System.out.println("Enter next number");
+	double nextNumber =scan.nextDouble();
+	//add
+	
+	if (operators.equals("+")) {
+		num[0] += nextNumber;
+		System.out.println(num[0]);}
+	
+	//subtraction
+	else if ( operators.equals("-")) {
+		num[0] -= nextNumber;
+		System.out.println(num[0]);}
+	//multiplication
+	else if (operators.equals("*")) {
+		num[0] *= nextNumber;
+		System.out.println(num[0]);}
+	//division
+	else if (operators.equals("/")) {
+		num[0] /= nextNumber;
+		System.out.println(num[0]);}
+	else {System.out.println("Invalid choice");}
+	
+}
+	}
+}
